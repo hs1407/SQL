@@ -95,12 +95,6 @@ WHERE InvoiceDate BETWEEN '2009-01-01' AND ‘2009-12-31';
 
 
 
-
-
-
-
-
-
 10.### Purchased track names with each invoice line ID ###
 
 

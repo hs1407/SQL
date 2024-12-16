@@ -139,11 +139,6 @@ ORDER BY t.TrackId;
 
 
 
-
-
-
-
-
 13.##  Total Sales made by each sales person##
 
 SELECT e.EmployeeID, e.FirstName, e.LastName, 
@@ -159,6 +154,8 @@ ON c.CustomerId= i.CustomerId
 
 WHERE e.Title LIKE 'Sales%Agent'
 GROUP BY e.EmployeeId;
+
+
 
 14.## Sales Agent with most dollar sales in 2009 ##
 

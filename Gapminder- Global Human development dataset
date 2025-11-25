@@ -1,0 +1,16 @@
+select * from gapminder2.population;
+
+ -- Total world population 2013 --
+select sum(total_population)
+from gapminder2.population
+where year= 2013;
+
+-- The Average population density across all countries in 2020 --
+select AVG(population_density_per_square_km) 
+from gapminder2.pop_density
+where 
+year= 2020;
+
+-- Countries in 2018 with population density greater than 500 people per square km--
+select country from gapminder2.pop_density
+where year= 2018 and population_density_per_square_km > 500.000;

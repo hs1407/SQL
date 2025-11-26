@@ -1,0 +1,36 @@
+select * from gapminder2.population;
+
+ -- 1. Total world population 2013 --
+select sum(total_population)
+from gapminder2.population
+where year= 2013;
+
+-- 2. The Average population density across all countries in 2020 --
+select AVG(population_density_per_square_km) 
+from gapminder2.pop_density
+where 
+year= 2020;
+
+-- 3. Countries in 2018 with population density greater than 500 people per square km--
+select country from gapminder2.pop_density
+where year= 2018 and population_density_per_square_km > 500.000;
+
+-- 4th couldnt --
+
+ -- 5. countries with life expectancy> avg gloab in 2020-- 
+ SELECT
+    l.country,
+    c.country_name,
+    l.life_expectancy
+FROM gapminder2.life_exp l
+JOIN gapminder2.countries c
+    ON l.country = c.country
+WHERE l.year = 2020
+  AND l.life_expectancy >
+      (
+          SELECT AVG(life_expectancy)
+          FROM gapminder2.life_exp
+          WHERE year = 2020
+            AND life_expectancy IS NOT NULL
+      )
+ORDER BY l.life_expectancy asc;
